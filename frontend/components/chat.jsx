@@ -7,7 +7,15 @@ const Chat = () => {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [thinkingDots, setThinkingDots] = useState(0);
+  const [sessionId, setSessionId] = useState('');
   const chatWindowRef = useRef(null);
+
+  useEffect(() => {
+    const generateSessionId = () => {
+      return Math.random().toString(36).substr(2, 9);
+    };
+    setSessionId(generateSessionId());
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +37,7 @@ const Chat = () => {
       const response = await fetch('http://localhost:8000/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: input, session_id: 'test_session' }),
+        body: JSON.stringify({ message: input, session_id: sessionId }),
       });
 
       if (!response.ok) throw new Error('Network response was not ok');
