@@ -7,7 +7,7 @@ const Message = ({ role, content }) => {
   const thinkingDots = '.'.repeat((Date.now() / 500) % 4);
 
   return (
-    <div className={`flex flex-col ${role === 'user' ? 'items-end' : 'items-start'}`}>
+    <div className={`flex flex-col ${role === 'user' ? 'items-end' : 'items-start'} mx-4`}>
       <div className={`flex items-center mb-2 ${role === 'user' ? 'flex-row-reverse' : ''}`}>
         {role === 'user' ? 
           <IoIosPerson className="text-2xl text-blue-600 ml-2" /> : 

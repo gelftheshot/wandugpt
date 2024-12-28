@@ -80,34 +80,36 @@ const Chat = () => {
   }, [chatMessages]);
 
   return (
-    <div className="flex flex-col h-full">
-      <div 
-        ref={chatWindowRef} 
-        className="flex-1 overflow-y-auto p-4 space-y-4"
-      >
-        {chatMessages.map((message, index) => (
-          <Message key={index} role={message.role} content={message.content} />
-        ))}
-      </div>
-      <div className="border-t border-gray-200 p-4 bg-white">
-        <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto">
-          <input
-            className="w-full p-4 pr-20 text-gray-700 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            value={input}
-            placeholder=" how can i help you ..."
-            onChange={(e) => setInput(e.target.value)}
-            disabled={isLoading}
-          />
-          <button
-            type="submit"
-            className={`absolute right-2 top-2 ${
-              isLoading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
-            } text-white px-4 py-2 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors`}
-            disabled={isLoading}
-          >
-            {isLoading ? 'Sending...' : 'Send'}
-          </button>
-        </form>
+    <div className="flex flex-col h-full items-center justify-center">
+      <div className="flex flex-col h-full w-full max-w-4xl mx-4 border border-gray-300 rounded-lg shadow-lg">
+        <div 
+          ref={chatWindowRef} 
+          className="flex-1 overflow-y-auto p-4 space-y-4"
+        >
+          {chatMessages.map((message, index) => (
+            <Message key={index} role={message.role} content={message.content} />
+          ))}
+        </div>
+        <div className="border-t border-gray-200 p-4 bg-white">
+          <form onSubmit={handleSubmit} className="relative max-w-4xl mx-auto">
+            <input
+              className="w-full p-4 pr-20 text-gray-700 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              value={input}
+              placeholder=" how can i help you ..."
+              onChange={(e) => setInput(e.target.value)}
+              disabled={isLoading}
+            />
+            <button
+              type="submit"
+              className={`absolute right-2 top-2 ${
+                isLoading ? 'bg-gray-400' : 'bg-blue-600 hover:bg-blue-700'
+              } text-white px-4 py-2 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors`}
+              disabled={isLoading}
+            >
+              {isLoading ? 'Sending...' : 'Send'}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
