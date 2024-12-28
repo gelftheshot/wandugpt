@@ -94,7 +94,7 @@ const Chat = () => {
           <input
             className="w-full p-4 pr-20 text-gray-700 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             value={input}
-            placeholder="Ask about Lihon..."
+            placeholder=" how can i help you ..."
             onChange={(e) => setInput(e.target.value)}
             disabled={isLoading}
           />

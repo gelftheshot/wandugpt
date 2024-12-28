@@ -13,7 +13,7 @@ const Message = ({ role, content }) => {
           <IoIosPerson className="text-2xl text-blue-600 ml-2" /> : 
           <SiGooglegemini className="text-2xl text-green-600 mr-2" />
         }
-        <span className="text-sm font-medium text-gray-600">{role === 'user' ? 'You' : "Lihon's AI"}</span>
+        <span className="text-sm font-medium text-gray-600">{role === 'user' ? 'You' : "WanduGPT"}</span>
       </div>
       <div className={`max-w-[90%] md:max-w-[70%] p-4 rounded-lg break-words ${
         role === 'user' 
