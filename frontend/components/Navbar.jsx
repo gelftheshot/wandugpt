@@ -23,11 +23,11 @@ const Header = () => {
                 </div>
 
                 {/* Navigation */}
-                <nav className={`flex-1 ${menuActive ? 'block' : 'hidden'} md:flex items-center justify-end space-x-6`}>
+                <nav className={`flex-1 ${menuActive ? 'hidden' : 'hidden'} md:flex items-center justify-end space-x-6`}>
                     <Link href="https://wandubot.com/" className="text-sm text-gray-700 font-bold mr-8">
                         Home
                     </Link>
-                    <Link href="https://wandubot.com/learn-chinese" className="text-sm text-gray-700 font-bold mr-8">
+                    <Link href="https://wandubot.com/learn-chinese" className="text-sm text-gray-700 font-bold mr-8 whitespace-nowrap">
                         学英语
                     </Link>
                     <Link href="https://ai.wandubot.com" className="text-sm text-gray-700 font-bold mr-8">
