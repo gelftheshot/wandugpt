@@ -39,20 +39,24 @@ app.add_middleware(
 SYSTEM_PROMPT = "You are WanduGPT"
 
 # Model configuration
+
 MODEL_CONFIG = {
-    "n_ctx": 2048,
-    "n_threads": 2,
+    "n_ctx": 8192,  # Increased context window
+    "n_threads": 8,  # Use all cores
+    "n_batch": 512,  # Add batch size
+    "n_gpu_layers": 0,  # CPU-only mode
     "verbose": False,
     "temperature": 0.7,
     "top_p": 0.95,
     "top_k": 40,
     "repeat_penalty": 1.1,
-    "max_tokens": 512  
+    "max_tokens": 512
 }
+
 
 # Get absolute path for model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Hermes-3-Llama-3.2-3B.Q8_0.gguf")
+MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.fp16.gguf")
 
 # Initialize model with better error handling
 try:
@@ -62,10 +66,11 @@ try:
     
     logger.info(f"Attempting to load model from: {MODEL_PATH}")
     llm = Llama(
-        model_path=MODEL_PATH,
-        n_ctx=MODEL_CONFIG["n_ctx"],
-        n_threads=MODEL_CONFIG["n_threads"],
-        verbose=MODEL_CONFIG["verbose"]
+    model_path=MODEL_PATH,
+    n_ctx=MODEL_CONFIG["n_ctx"],
+    n_threads=MODEL_CONFIG["n_threads"],
+    n_batch=MODEL_CONFIG["n_batch"],
+    n_gpu_layers=MODEL_CONFIG["n_gpu_layers"]
     )
     logger.info(f"Model loaded successfully")
 except Exception as e:

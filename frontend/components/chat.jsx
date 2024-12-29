@@ -34,7 +34,7 @@ const Chat = () => {
     setChatMessages(prev => [...prev, { role: 'assistant', content: 'thinking' }]);
 
     try {
-      const response = await fetch('http://localhost:8000/chat/stream', {
+      const response = await fetch('/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),
