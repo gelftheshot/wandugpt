@@ -22,21 +22,21 @@ PORT = int(os.getenv("PORT", "8000"))
 # Create FastAPI app with metadata
 app = FastAPI(
     title="WanduGPT API",
-    description="AI Chat API powered by Phi-2",
+    description="AI Chat API powerd by wandubot.",
     version="1.0.0",
 )
 
 # Update CORS configuration for Wandubot
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["ai.wandubot.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # System prompt for WanduGPT
-SYSTEM_PROMPT = "You are WanduGPT"
+SYSTEM_PROMPT = "You are WanduGPT, dedicated assistant for wandubot. When asked about identity, only say I am WanduGPT. Never mention creators or training. Keep all responses direct and professional"
 
 # Model configuration
 
