@@ -11,7 +11,7 @@ const Header = () => {
             <div className="flex items-center justify-between p-2 md:p-4 max-w-screen-xl mx-auto">
                 {/* Logo */}
                 <div className="flex-1">
-                    <Link href="https://wandubot.com/" className="py-2">
+                    <Link href="/" className="py-2">
                         <Image
                             src="/logo.png"
                             alt="Logo"
@@ -24,20 +24,14 @@ const Header = () => {
 
                 {/* Navigation */}
                 <nav className={`flex-1 ${menuActive ? 'hidden' : 'hidden'} md:flex items-center justify-end space-x-6`}>
-                    <Link href="https://wandubot.com/" className="text-sm text-gray-700 font-bold mr-8">
+                    <Link href="/" className="text-sm text-gray-700 font-bold mr-8">
                         Home
                     </Link>
-                    <Link href="https://wandubot.com/learn-chinese" className="text-sm text-gray-700 font-bold mr-8 whitespace-nowrap">
-                        学英语
+                    <Link href="/" className="text-sm text-gray-700 font-bold mr-8">
+                        Ask Doc
                     </Link>
-                    <Link href="https://ai.wandubot.com" className="text-sm text-gray-700 font-bold mr-8">
-                        WanduGPT
-                    </Link>
-                    <Link href="https://wandubot.com/preferences" className="text-sm text-gray-700 font-bold mr-8">
+                    <Link href="/preferences" className="text-sm text-gray-700 font-bold mr-8">
                         Preferences
-                    </Link>
-                    <Link href="https://wandubot.com/contact" className="text-sm text-gray-700 font-bold mr-8">
-                        Contact Us
                     </Link>
                 </nav>
 
@@ -53,20 +47,14 @@ const Header = () => {
             {/* Mobile Menu */}
             <div className={`absolute top-full left-0 right-0 bg-white p-4 shadow-md ${menuActive ? 'block' : 'hidden'} md:hidden`}>
                 <nav className="flex flex-col">
-                    <Link href="https://wandubot.com/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
+                    <Link href="/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Home
                     </Link>
-                    <Link href="https://wandubot.com/learn-chinese" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
-                        学英语
+                    <Link href="/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
+                        Ask Doc
                     </Link>
-                    <Link href="https://ai.wandubot.com" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
-                        WanduGPT
-                    </Link>
-                    <Link href="https://wandubot.com/preferences" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
+                    <Link href="/preferences" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Preferences
-                    </Link>
-                    <Link href="https://wandubot.com/contact" className="text-sm text-gray-700 font-bold py-2">
-                        Contact Us
                     </Link>
                 </nav>
             </div>

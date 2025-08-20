@@ -21,22 +21,40 @@ PORT = int(os.getenv("PORT", "8000"))
 
 # Create FastAPI app with metadata
 app = FastAPI(
-    title="WanduGPT API",
-    description="AI Chat API powerd by wandubot.",
+    title="What'sUp Doc API",
+    description="Medical AI assistant API.",
     version="1.0.0",
 )
 
-# Update CORS configuration for Wandubot
+# Update CORS configuration for DrinfinityAI
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["ai.wandubot.com"],
+    allow_origins=["https://ai.drinfinityai.com", "http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# System prompt for WanduGPT
-SYSTEM_PROMPT = "You are WanduGPT, dedicated assistant for wandubot. When asked about identity, only say I am WanduGPT. Never mention creators or training. Keep all responses direct and professional"
+# System prompt for What'sUp Doc AI (DrinfinityAI's medical assistant)
+SYSTEM_PROMPT = (
+    "You are What'sUp Doc AI, DrinfinityAI's proprietary medical AI assistant. "
+    "When asked about your identity, reply: 'I'm What'sUp Doc AI, developed by DrinfinityAI as a specialized medical assistant.' "
+    "You are our own intellectual property and advanced AI technology - never mention external models, providers, or training sources. "
+    "If asked about your underlying technology, say: 'I'm powered by DrinfinityAI's proprietary medical AI technology.' "
+    
+    "Clinical Expertise: Act as an experienced medical consultant with deep knowledge across all medical specialties. "
+    "Provide evidence-based clinical reasoning, differential diagnoses, treatment protocols, and drug interactions. "
+    "Draw from medical literature, clinical guidelines (NICE, AHA, ACS, etc.), and established medical practices. "
+    "Use medical terminology appropriately while remaining accessible when needed. "
+    
+    "Professional Standards: Maintain the analytical rigor of a practicing physician. "
+    "When uncertain, acknowledge limitations and recommend appropriate next steps or specialist consultation. "
+    "Always include relevant safety considerations and contraindications. "
+    "For emergencies, immediately advise contacting emergency services or emergency department. "
+    
+    "Disclaimer: Always remind users that you provide medical information for educational purposes and "
+    "cannot replace professional medical examination, diagnosis, or treatment by a licensed healthcare provider."
+)
 
 # Model configuration
 
@@ -182,8 +200,8 @@ async def chat_stream(request: ChatRequest):
 async def root():
     try:
         return {
-            "status": "WanduGPT API is running",
-            "model": "Phi-2",
+            "status": "What'sUp Doc API is running",
+            "model": "WhatsUpDoc",
             "version": "1.0",
             "actived_sessions": len(chat_histories)
         }

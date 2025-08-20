@@ -34,7 +34,8 @@ const Chat = () => {
     setChatMessages(prev => [...prev, { role: 'assistant', content: 'thinking' }]);
 
     try {
-      const response = await fetch('/chat/stream', {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || '';
+      const response = await fetch(`${apiBase}/chat/stream`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),
