@@ -13,7 +13,7 @@ const Header = () => {
                 <div className="flex-1">
                     <Link href="/" className="py-2">
                         <Image
-                            src="/logo.png"
+                            src="/logo.jpeg"
                             alt="Logo"
                             width={69.97}
                             height={40}

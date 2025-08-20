@@ -45,6 +45,11 @@ pm2 save
 pm2 startup
 
 echo "✅ Deployment complete!"
+echo "📝 Don't forget to:"
+echo "   1. Place your logo.jpeg in: $DEPLOY_DIR/frontend/public/logo.jpeg"
+echo "   2. Configure Nginx: sudo cp nginx-ai.drinfinityai.com.conf /etc/nginx/sites-available/"
+echo "   3. Enable site and get SSL certificate"
+echo ""
 echo "Backend: http://localhost:8000"
 echo "Frontend: http://localhost:3000"
 echo "Check status: pm2 status"
