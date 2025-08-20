@@ -34,8 +34,8 @@ const Chat = () => {
     setChatMessages(prev => [...prev, { role: 'assistant', content: 'thinking' }]);
 
     try {
-      const apiBase = process.env.NEXT_PUBLIC_API_BASE || '';
-      const response = await fetch(`${apiBase}/chat/stream`, {
+      // Hardcoded API URL - no need for environment variables
+      const response = await fetch('http://localhost:8000/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),

@@ -24,13 +24,13 @@ const Header = () => {
 
                 {/* Navigation */}
                 <nav className={`flex-1 ${menuActive ? 'hidden' : 'hidden'} md:flex items-center justify-end space-x-6`}>
-                    <Link href="/" className="text-sm text-gray-700 font-bold mr-8">
+                    <Link href="https://drinfinityai.com" className="text-sm text-gray-700 font-bold mr-8">
                         Home
                     </Link>
                     <Link href="/" className="text-sm text-gray-700 font-bold mr-8">
                         Ask Doc
                     </Link>
-                    <Link href="/preferences" className="text-sm text-gray-700 font-bold mr-8">
+                    <Link href="https://drinfinityai.com/preferences" className="text-sm text-gray-700 font-bold mr-8">
                         Preferences
                     </Link>
                 </nav>
@@ -47,13 +47,13 @@ const Header = () => {
             {/* Mobile Menu */}
             <div className={`absolute top-full left-0 right-0 bg-white p-4 shadow-md ${menuActive ? 'block' : 'hidden'} md:hidden`}>
                 <nav className="flex flex-col">
-                    <Link href="/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
+                    <Link href="https://drinfinityai.com" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Home
                     </Link>
                     <Link href="/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Ask Doc
                     </Link>
-                    <Link href="/preferences" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
+                    <Link href="https://drinfinityai.com/preferences" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Preferences
                     </Link>
                 </nav>
