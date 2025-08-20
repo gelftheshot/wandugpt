@@ -34,8 +34,8 @@ const Chat = () => {
     setChatMessages(prev => [...prev, { role: 'assistant', content: 'thinking' }]);
 
     try {
-      // Hardcoded API URL - no need for environment variables
-      const response = await fetch('http://localhost:8000/chat/stream', {
+      // Use the domain-based API URL for production
+      const response = await fetch('https://ai.drinfinityai.com:8000/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),
