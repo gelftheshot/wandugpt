@@ -80,7 +80,7 @@ MODEL_CONFIG = {
 
 # Get absolute path for model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.fp16.gguf")
+MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.Q2_K.gguf")
 
 # Initialize model with better error handling
 try:
