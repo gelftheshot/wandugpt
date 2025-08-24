@@ -21,7 +21,7 @@ PORT = int(os.getenv("PORT", "8000"))
 
 # Create FastAPI app with metadata
 app = FastAPI(
-    title="What'sUp Doc API",
+    title="Dr. Infinity API",
     description="Medical AI assistant API.",
     version="1.0.0",
 )
@@ -35,10 +35,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# System prompt for What'sUp Doc AI (DrinfinityAI's medical assistant)
+# System prompt for Dr. Infinity (DrinfinityAI's medical assistant)
 SYSTEM_PROMPT = (
-    "You are What'sUp Doc AI, DrinfinityAI's proprietary medical AI assistant. "
-    "When asked about your identity, reply: 'I'm What'sUp Doc AI, developed by DrinfinityAI as a specialized medical assistant.' "
+    "You are Dr. Infinity, DrinfinityAI's proprietary medical AI assistant. "
+    "When asked about your identity, reply: 'I'm Dr. Infinity, developed by DrinfinityAI as a specialized medical assistant.' "
     "You are our own intellectual property and advanced AI technology - never mention external models, providers, or training sources. "
     "If asked about your underlying technology, say: 'I'm powered by DrinfinityAI's proprietary medical AI technology.' "
     
@@ -56,31 +56,24 @@ SYSTEM_PROMPT = (
     "cannot replace professional medical examination, diagnosis, or treatment by a licensed healthcare provider."
 )
 
-# Model configuration
-
+# Optimized Model configuration for ARM servers with 20GB RAM
 MODEL_CONFIG = {
-    "n_ctx": 8192,  # Reasonable context window
-    "n_threads": 8,  # Conservative thread count
-    "n_batch": 512,  # Moderate batch size
-    "n_gpu_layers": 0,  # CPU-only mode
-    "verbose": True,  # Enable verbose for debugging
+    "n_ctx": 16384,     # Larger context window for longer conversations
+    "n_threads": 8,     # Use all CPU cores for maximum performance  
+    "n_batch": 1024,    # Larger batch size for better memory bandwidth utilization
+    "n_gpu_layers": 0,  # CPU-only mode for ARM compatibility
+    "verbose": False,   # Disable verbose for production speed
     "temperature": 0.7,
     "top_p": 0.95,
     "top_k": 40,
     "repeat_penalty": 1.1,
-    "max_tokens": 1024,  # Longer responses for detailed medical explanations
-    "use_mmap": True,  # Memory-map the model file
-    "use_mlock": False,  # DISABLE memory locking (common cause of hanging)
-    "seed": -1,  # Random seed
-    "f16_kv": True,  # Use float16 for memory efficiency
-    "low_vram": False,  # Don't use VRAM optimizations
-    "numa": False,  # DISABLE NUMA (often causes issues on cloud instances)
+    "max_tokens": 1024  # Longer responses for detailed medical explanations
 }
 
 
 # Get absolute path for model
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.Q2_K.gguf")
+MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.fp16.gguf")
 
 # Initialize model with better error handling
 try:
@@ -94,14 +87,7 @@ try:
         n_ctx=MODEL_CONFIG["n_ctx"],
         n_threads=MODEL_CONFIG["n_threads"],
         n_batch=MODEL_CONFIG["n_batch"],
-        n_gpu_layers=MODEL_CONFIG["n_gpu_layers"],
-        use_mmap=MODEL_CONFIG["use_mmap"],
-        use_mlock=MODEL_CONFIG["use_mlock"],
-        seed=MODEL_CONFIG["seed"],
-        f16_kv=MODEL_CONFIG["f16_kv"],
-        verbose=MODEL_CONFIG["verbose"],
-        low_vram=MODEL_CONFIG["low_vram"],
-        numa=MODEL_CONFIG["numa"]
+        n_gpu_layers=MODEL_CONFIG["n_gpu_layers"]
     )
     logger.info(f"Model loaded successfully")
 except Exception as e:
@@ -213,8 +199,8 @@ async def chat_stream(request: ChatRequest):
 async def root():
     try:
         return {
-            "status": "What'sUp Doc API is running",
-            "model": "WhatsUpDoc",
+            "status": "Dr. Infinity API is running",
+            "model": "Dr. Infinity",
             "version": "1.0",
             "actived_sessions": len(chat_histories)
         }
