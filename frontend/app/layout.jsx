@@ -4,9 +4,9 @@ import Header from "../components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "What'sUp Doc AI",
-  description: "What'sUp Doc AI — DrinfinityAI's medical assistant.",
-  keywords: "medical AI, clinical assistant, DrinfinityAI, healthcare, What'sUp Doc",
+  title: "Dr. Infinity AI",
+  description: "Dr. Infinity AI — DrinfinityAI's medical assistant.",
+  keywords: "medical AI, clinical assistant, DrinfinityAI, healthcare, Dr. Infinity",
   author: "DrinfinityAI",
 };
 

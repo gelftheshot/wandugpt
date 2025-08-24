@@ -11,10 +11,10 @@ const Header = () => {
             <div className="flex items-center justify-between p-2 md:p-4 max-w-screen-xl mx-auto">
                 {/* Logo */}
                 <div className="flex-1">
-                    <Link href="/" className="py-2">
+                    <Link href="https://www.drinfinityai.com" className="py-2">
                         <Image
                             src="/logo.jpeg"
-                            alt="Logo"
+                            alt="Dr. Infinity AI"
                             width={69.97}
                             height={40}
                             className="object-contain"
@@ -28,7 +28,7 @@ const Header = () => {
                         Home
                     </Link>
                     <Link href="/" className="text-sm text-gray-700 font-bold mr-8">
-                        Ask Doc
+                        Dr. Infinity AI
                     </Link>
                     <Link href="https://drinfinityai.com/preferences" className="text-sm text-gray-700 font-bold mr-8">
                         Preferences
@@ -51,7 +51,7 @@ const Header = () => {
                         Home
                     </Link>
                     <Link href="/" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
-                        Ask Doc
+                        Dr. Infinity AI
                     </Link>
                     <Link href="https://drinfinityai.com/preferences" className="text-sm text-gray-700 font-bold py-2 border-b border-gray-200">
                         Preferences
