@@ -56,24 +56,23 @@ SYSTEM_PROMPT = (
     "cannot replace professional medical examination, diagnosis, or treatment by a licensed healthcare provider."
 )
 
-# Optimized Model configuration for ARM servers with 20GB RAM
+# Model configuration - SAFE optimizations only
 MODEL_CONFIG = {
-    "n_ctx": 16384,     # Larger context window for longer conversations
-    "n_threads": 8,     # Use all CPU cores for maximum performance  
-    "n_batch": 1024,    # Larger batch size for better memory bandwidth utilization
-    "n_gpu_layers": 0,  # CPU-only mode for ARM compatibility
-    "verbose": False,   # Disable verbose for production speed
+    "n_ctx": 12288,  # Modest increase from 8192 for better conversations
+    "n_threads": 8,  # Use all cores
+    "n_batch": 768,  # Modest increase from 512 for better performance
+    "n_gpu_layers": 0,  # CPU-only mode
+    "verbose": False,
     "temperature": 0.7,
     "top_p": 0.95,
     "top_k": 40,
     "repeat_penalty": 1.1,
-    "max_tokens": 1024  # Longer responses for detailed medical explanations
+    "max_tokens": 768  # Increased for better medical responses
 }
 
-
-# Get absolute path for model
+# Get absolute path for model - Updated to BioMistral
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "Mistral-7B-Instruct-v0.3.fp16.gguf")
+MODEL_PATH = os.path.join(BASE_DIR, "llama.cpp", "models", "BioMistral-7B.Q4_K_M.gguf")
 
 # Initialize model with better error handling
 try:
