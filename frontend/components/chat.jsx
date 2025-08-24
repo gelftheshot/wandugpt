@@ -34,8 +34,8 @@ const Chat = () => {
     setChatMessages(prev => [...prev, { role: 'assistant', content: 'thinking' }]);
 
     try {
-      // Use the API route through Nginx reverse proxy
-      const response = await fetch('/api/chat/stream', {
+      // Direct API access for immediate fix
+      const response = await fetch('https://ai.drinfinityai.com:8000/chat/stream', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: input, session_id: sessionId }),

@@ -59,16 +59,22 @@ SYSTEM_PROMPT = (
 # Model configuration
 
 MODEL_CONFIG = {
-    "n_ctx": 8192,  # Increased context window
-    "n_threads": 8,  # Use all cores
-    "n_batch": 512,  # Add batch size
+    "n_ctx": 8192,  # Reasonable context window
+    "n_threads": 8,  # Conservative thread count
+    "n_batch": 512,  # Moderate batch size
     "n_gpu_layers": 0,  # CPU-only mode
-    "verbose": False,
+    "verbose": True,  # Enable verbose for debugging
     "temperature": 0.7,
     "top_p": 0.95,
     "top_k": 40,
     "repeat_penalty": 1.1,
-    "max_tokens": 512
+    "max_tokens": 1024,  # Longer responses for detailed medical explanations
+    "use_mmap": True,  # Memory-map the model file
+    "use_mlock": False,  # DISABLE memory locking (common cause of hanging)
+    "seed": -1,  # Random seed
+    "f16_kv": True,  # Use float16 for memory efficiency
+    "low_vram": False,  # Don't use VRAM optimizations
+    "numa": False,  # DISABLE NUMA (often causes issues on cloud instances)
 }
 
 
@@ -84,11 +90,18 @@ try:
     
     logger.info(f"Attempting to load model from: {MODEL_PATH}")
     llm = Llama(
-    model_path=MODEL_PATH,
-    n_ctx=MODEL_CONFIG["n_ctx"],
-    n_threads=MODEL_CONFIG["n_threads"],
-    n_batch=MODEL_CONFIG["n_batch"],
-    n_gpu_layers=MODEL_CONFIG["n_gpu_layers"]
+        model_path=MODEL_PATH,
+        n_ctx=MODEL_CONFIG["n_ctx"],
+        n_threads=MODEL_CONFIG["n_threads"],
+        n_batch=MODEL_CONFIG["n_batch"],
+        n_gpu_layers=MODEL_CONFIG["n_gpu_layers"],
+        use_mmap=MODEL_CONFIG["use_mmap"],
+        use_mlock=MODEL_CONFIG["use_mlock"],
+        seed=MODEL_CONFIG["seed"],
+        f16_kv=MODEL_CONFIG["f16_kv"],
+        verbose=MODEL_CONFIG["verbose"],
+        low_vram=MODEL_CONFIG["low_vram"],
+        numa=MODEL_CONFIG["numa"]
     )
     logger.info(f"Model loaded successfully")
 except Exception as e:
