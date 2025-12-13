@@ -1,55 +1,91 @@
 #!/bin/bash
 
 # DrinfinityAI Deployment Script
-echo "🚀 Deploying What'sUp Doc AI..."
+echo "🚀 Deploying Dr. Infinity AI..."
 
 # Set deployment directory
 DEPLOY_DIR="/opt/drinfinityai"
 
+# Colors for output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
 # Create directories
+echo "📁 Creating directories..."
 sudo mkdir -p $DEPLOY_DIR/{backend/{logs,llama.cpp/models},frontend/logs}
 
 # Install system dependencies
-echo "📦 Installing system dependencies..."
+echo -e "${YELLOW}📦 Installing system dependencies...${NC}"
 sudo apt update
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs python3 python3-pip nginx
+sudo apt install -y nodejs python3 python3-pip python3-venv nginx
 sudo npm install -g pm2
 
-# Install Python dependencies
-echo "🐍 Installing Python dependencies..."
+# Setup Python virtual environment
+echo -e "${YELLOW}🐍 Setting up Python virtual environment...${NC}"
 cd $DEPLOY_DIR/backend
-pip3 install -r requirements.txt
+if [ ! -d "venv" ]; then
+    python3 -m venv venv
+fi
+source venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+deactivate
 
 # Install Node.js dependencies and build
-echo "⚛️ Installing Node.js dependencies..."
+echo -e "${YELLOW}⚛️ Building frontend...${NC}"
 cd $DEPLOY_DIR/frontend
 npm install
 npm run build
 
-# Download model (if not exists)
-MODEL_FILE="$DEPLOY_DIR/backend/llama.cpp/models/Mistral-7B-Instruct-v0.3.fp16.gguf"
+# Check if model exists
+MODEL_FILE="$DEPLOY_DIR/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf"
 if [ ! -f "$MODEL_FILE" ]; then
-    echo "📥 Downloading AI model (4.1GB)..."
+    echo -e "${YELLOW}📥 Downloading BioMistral model (4.4GB)...${NC}"
     cd $DEPLOY_DIR/backend/llama.cpp/models
-    wget https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/mistral-7b-instruct-v0.3.fp16.gguf -O Mistral-7B-Instruct-v0.3.fp16.gguf
+    wget https://huggingface.co/MaziyarPanahi/BioMistral-7B-GGUF/resolve/main/BioMistral-7B.Q4_K_M.gguf -O BioMistral-7B.Q4_K_M.gguf
 fi
 
-# Start services with PM2
-echo "🔥 Starting services..."
-cd $DEPLOY_DIR/backend && pm2 start ecosystem.config.js
-cd $DEPLOY_DIR/frontend && pm2 start ecosystem.config.js
+# Stop existing PM2 processes
+echo -e "${YELLOW}🛑 Stopping existing services...${NC}"
+pm2 delete drinfinity-ai-backend drinfinity-ai-frontend 2>/dev/null || true
+
+# Start services with unified PM2 config
+echo -e "${YELLOW}🔥 Starting services with PM2...${NC}"
+cd $DEPLOY_DIR
+pm2 start ecosystem.config.js
 
 # Save PM2 configuration
 pm2 save
-pm2 startup
 
-echo "✅ Deployment complete!"
-echo "📝 Don't forget to:"
-echo "   1. Place your logo.jpeg in: $DEPLOY_DIR/frontend/public/logo.jpeg"
-echo "   2. Configure Nginx: sudo cp nginx-ai.drinfinityai.com.conf /etc/nginx/sites-available/"
-echo "   3. Enable site and get SSL certificate"
+# Setup PM2 to start on boot (run the generated command)
+echo -e "${YELLOW}⚙️  Setting up PM2 startup...${NC}"
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u $USER --hp $HOME
+
 echo ""
-echo "Backend: http://localhost:8000"
-echo "Frontend: http://localhost:3000"
-echo "Check status: pm2 status"
+echo -e "${GREEN}✅ Deployment complete!${NC}"
+echo ""
+echo "📊 Service Status:"
+pm2 status
+echo ""
+echo -e "${YELLOW}📝 Next steps:${NC}"
+echo "   1. Configure SSL certificate (if not done)"
+echo "   2. Restart Nginx: sudo systemctl restart nginx"
+echo "   3. Check logs: pm2 logs"
+echo ""
+echo -e "${GREEN}🌐 Your application:${NC}"
+echo "   Backend API: http://localhost:8000"
+echo "   Backend Health: http://localhost:8000/health"
+echo "   Frontend: http://localhost:3000"
+echo "   Public URL: https://ai.drinfinityai.com"
+echo ""
+echo -e "${YELLOW}🔧 Useful PM2 commands:${NC}"
+echo "   pm2 status              - Check all services"
+echo "   pm2 logs                - View all logs"
+echo "   pm2 logs backend        - View backend logs only"
+echo "   pm2 logs frontend       - View frontend logs only"
+echo "   pm2 restart all         - Restart all services"
+echo "   pm2 stop all            - Stop all services"
+echo "   pm2 monit               - Monitor resources"

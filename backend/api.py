@@ -56,18 +56,22 @@ SYSTEM_PROMPT = (
     "cannot replace professional medical examination, diagnosis, or treatment by a licensed healthcare provider."
 )
 
-# Model configuration - SAFE optimizations only
+# Model configuration - Optimized for 8 CPU & 26GB RAM
 MODEL_CONFIG = {
-    "n_ctx": 12288,  # Modest increase from 8192 for better conversations
-    "n_threads": 8,  # Use all cores
-    "n_batch": 768,  # Modest increase from 512 for better performance
+    "n_ctx": 8192,  # Context window (8K tokens) - uses ~4GB RAM, faster processing
+    "n_threads": 8,  # Use all 8 CPU cores
+    "n_threads_batch": 8,  # Batch processing threads
+    "n_batch": 2048,  # Large batch size for better throughput
     "n_gpu_layers": 0,  # CPU-only mode
     "verbose": False,
     "temperature": 0.7,
     "top_p": 0.95,
     "top_k": 40,
     "repeat_penalty": 1.1,
-    "max_tokens": 768  # Increased for better medical responses
+    "max_tokens": 1024,  # Longer responses for detailed medical information
+    "use_mlock": True,  # Lock model in RAM for faster access
+    "use_mmap": True,  # Memory-map the model file
+    "numa": False  # Disable NUMA (not needed for single-socket systems)
 }
 
 # Get absolute path for model - Updated to BioMistral
@@ -81,14 +85,19 @@ try:
         raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
     
     logger.info(f"Attempting to load model from: {MODEL_PATH}")
+    logger.info(f"System specs: 8 CPU cores, optimized for high performance")
     llm = Llama(
         model_path=MODEL_PATH,
         n_ctx=MODEL_CONFIG["n_ctx"],
         n_threads=MODEL_CONFIG["n_threads"],
+        n_threads_batch=MODEL_CONFIG["n_threads_batch"],
         n_batch=MODEL_CONFIG["n_batch"],
-        n_gpu_layers=MODEL_CONFIG["n_gpu_layers"]
+        n_gpu_layers=MODEL_CONFIG["n_gpu_layers"],
+        use_mlock=MODEL_CONFIG["use_mlock"],
+        use_mmap=MODEL_CONFIG["use_mmap"],
+        verbose=MODEL_CONFIG["verbose"]
     )
-    logger.info(f"Model loaded successfully")
+    logger.info(f"Model loaded successfully with 8K context window")
 except Exception as e:
     logger.error(f"Failed to load model: {str(e)}")
     raise
@@ -225,6 +234,9 @@ if __name__ == "__main__":
         host=HOST,
         port=PORT,
         reload=False,  # Disable reload in production
-        workers=4,     # Number of worker processes
+        workers=4,     # Optimized for 8 CPU cores
         log_level="info",
+        access_log=True,
+        backlog=2048,  # Connection backlog for high traffic
+        timeout_keep_alive=60,  # Keep connections alive longer
     )
