@@ -18,6 +18,7 @@ const Header = () => {
                             width={150}
                             height={85}
                             className="object-contain"
+                            style={{ width: '200px', height: 'auto' }}
                         />
                     </Link>
                 </div>
