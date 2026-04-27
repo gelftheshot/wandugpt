@@ -1,0 +1,571 @@
+2025-12-13T07:29:41: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-12-13T07:29:41: INFO:     Started parent process [22507]
+2025-12-13T07:29:41: 2025-12-13 07:29:41,781 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,781 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: Process SpawnProcess-4:
+2025-12-13T07:29:41: Traceback (most recent call last):
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:29:41:     self.run()
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:29:41:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:29:41:     target(sockets=sockets)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:29:41:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:29:41:     return runner.run(main)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:29:41:     return self._loop.run_until_complete(task)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:29:41:     config.load()
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:29:41:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:29:41:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:29:41:     module = importlib.import_module(module_str)
+2025-12-13T07:29:41:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:29:41:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:29:41:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:29:41: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,799 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,800 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: Process SpawnProcess-1:
+2025-12-13T07:29:41: Traceback (most recent call last):
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:29:41:     self.run()
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:29:41:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:29:41:     target(sockets=sockets)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:29:41:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:29:41:     return runner.run(main)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:29:41:     return self._loop.run_until_complete(task)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:29:41:     config.load()
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:29:41:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:29:41:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:29:41:     module = importlib.import_module(module_str)
+2025-12-13T07:29:41:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:29:41:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:29:41:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:29:41: 2025-12-13 07:29:41,805 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,805 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,805 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: 2025-12-13 07:29:41,805 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: Process SpawnProcess-2:
+2025-12-13T07:29:41: Process SpawnProcess-3:
+2025-12-13T07:29:41: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: Traceback (most recent call last):
+2025-12-13T07:29:41: Traceback (most recent call last):
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:29:41:     self.run()
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:29:41:     self.run()
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:29:41:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:29:41:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:29:41:     target(sockets=sockets)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:29:41:     target(sockets=sockets)
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:29:41:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:29:41:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:29:41:     return runner.run(main)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:29:41:     return runner.run(main)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:29:41:     return self._loop.run_until_complete(task)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:29:41:     return self._loop.run_until_complete(task)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:29:41:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:29:41:     config.load()
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:29:41:     config.load()
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:29:41:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:29:41:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:29:41:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:29:41:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:29:41:     module = importlib.import_module(module_str)
+2025-12-13T07:29:41:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:29:41:     module = importlib.import_module(module_str)
+2025-12-13T07:29:41:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:29:41:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:29:41:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:29:41:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:29:41:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:29:41:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:29:41:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:29:41:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:29:41: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:29:41: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:36:44: INFO:     Stopping parent process [22507]
+2025-12-13T07:38:00: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-12-13T07:38:00: INFO:     Started parent process [24120]
+2025-12-13T07:38:00: 2025-12-13 07:38:00,914 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: 2025-12-13 07:38:00,914 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Process SpawnProcess-3:
+2025-12-13T07:38:00: 2025-12-13 07:38:00,915 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: 2025-12-13 07:38:00,915 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Process SpawnProcess-2:
+2025-12-13T07:38:00: Traceback (most recent call last):
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:38:00:     self.run()
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:38:00:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:38:00:     target(sockets=sockets)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:38:00:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:38:00:     return runner.run(main)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:38:00:     return self._loop.run_until_complete(task)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:38:00:     config.load()
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:38:00:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:38:00:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:38:00:     module = importlib.import_module(module_str)
+2025-12-13T07:38:00:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:38:00:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:38:00:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:38:00: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Traceback (most recent call last):
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:38:00:     self.run()
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:38:00:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:38:00:     target(sockets=sockets)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:38:00:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:38:00:     return runner.run(main)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:38:00:     return self._loop.run_until_complete(task)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:38:00:     config.load()
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:38:00:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:38:00:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:38:00:     module = importlib.import_module(module_str)
+2025-12-13T07:38:00:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:38:00:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:38:00:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:38:00: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: 2025-12-13 07:38:00,917 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: 2025-12-13 07:38:00,917 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Process SpawnProcess-4:
+2025-12-13T07:38:00: 2025-12-13 07:38:00,919 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: 2025-12-13 07:38:00,919 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Traceback (most recent call last):
+2025-12-13T07:38:00: Process SpawnProcess-1:
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:38:00:     self.run()
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:38:00:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:38:00:     target(sockets=sockets)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:38:00:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:38:00:     return runner.run(main)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:38:00:     return self._loop.run_until_complete(task)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:38:00:     config.load()
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:38:00:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:38:00:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:38:00:     module = importlib.import_module(module_str)
+2025-12-13T07:38:00:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:38:00:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:38:00:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:38:00: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:38:00: Traceback (most recent call last):
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:38:00:     self.run()
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:38:00:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:38:00:     target(sockets=sockets)
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:38:00:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:38:00:     return runner.run(main)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:38:00:     return self._loop.run_until_complete(task)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:38:00:     config.load()
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:38:00:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:38:00:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:38:00:     module = importlib.import_module(module_str)
+2025-12-13T07:38:00:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:38:00:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:38:00:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:38:00:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:38:00:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:38:00:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:38:00: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:14: INFO:     Stopping parent process [24120]
+2025-12-13T07:49:15: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-12-13T07:49:15: INFO:     Started parent process [24425]
+2025-12-13T07:49:15: 2025-12-13 07:49:15,630 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,630 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: Process SpawnProcess-1:
+2025-12-13T07:49:15: Traceback (most recent call last):
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:49:15:     self.run()
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:49:15:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:49:15:     target(sockets=sockets)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:49:15:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:49:15:     return runner.run(main)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:49:15:     return self._loop.run_until_complete(task)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:49:15:     config.load()
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:49:15:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:49:15:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:49:15:     module = importlib.import_module(module_str)
+2025-12-13T07:49:15:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:49:15:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:49:15:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:49:15: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,647 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,648 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: Process SpawnProcess-3:
+2025-12-13T07:49:15: Traceback (most recent call last):
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:49:15:     self.run()
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:49:15:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:49:15:     target(sockets=sockets)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:49:15:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:49:15:     return runner.run(main)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:49:15:     return self._loop.run_until_complete(task)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:49:15:     config.load()
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:49:15:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:49:15:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:49:15:     module = importlib.import_module(module_str)
+2025-12-13T07:49:15:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:49:15:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:49:15:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:49:15: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,659 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,659 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: Process SpawnProcess-4:
+2025-12-13T07:49:15: Traceback (most recent call last):
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:49:15:     self.run()
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:49:15:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:49:15:     target(sockets=sockets)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:49:15:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:49:15:     return runner.run(main)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:49:15:     return self._loop.run_until_complete(task)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:49:15:     config.load()
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:49:15:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:49:15:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:49:15:     module = importlib.import_module(module_str)
+2025-12-13T07:49:15:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:49:15:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:49:15:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:49:15: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,662 - ERROR - Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: 2025-12-13 07:49:15,662 - ERROR - Failed to load model: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:49:15: Process SpawnProcess-2:
+2025-12-13T07:49:15: Traceback (most recent call last):
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+2025-12-13T07:49:15:     self.run()
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/multiprocessing/process.py", line 108, in run
+2025-12-13T07:49:15:     self._target(*self._args, **self._kwargs)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+2025-12-13T07:49:15:     target(sockets=sockets)
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 61, in run
+2025-12-13T07:49:15:     return asyncio.run(self.serve(sockets=sockets))
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+2025-12-13T07:49:15:     return runner.run(main)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+2025-12-13T07:49:15:     return self._loop.run_until_complete(task)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/server.py", line 68, in serve
+2025-12-13T07:49:15:     config.load()
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/config.py", line 467, in load
+2025-12-13T07:49:15:     self.loaded_app = import_from_string(self.app)
+2025-12-13T07:49:15:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/venv/lib/python3.12/site-packages/uvicorn/importer.py", line 21, in import_from_string
+2025-12-13T07:49:15:     module = importlib.import_module(module_str)
+2025-12-13T07:49:15:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+2025-12-13T07:49:15:     return _bootstrap._gcd_import(name[level:], package, level)
+2025-12-13T07:49:15:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+2025-12-13T07:49:15:   File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+2025-12-13T07:49:15:   File "/opt/drinfinityai/backend/api.py", line 85, in <module>
+2025-12-13T07:49:15:     raise FileNotFoundError(f"Model file not found at: {MODEL_PATH}")
+2025-12-13T07:49:15: FileNotFoundError: Model file not found at: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:51:34: INFO:     Stopping parent process [24425]
+2025-12-13T07:51:34: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-12-13T07:51:34: INFO:     Started parent process [24595]
+2025-12-13T07:51:35: 2025-12-13 07:51:35,468 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:51:35: 2025-12-13 07:51:35,468 - INFO - System specs: 8 CPU cores, optimized for high performance
+2025-12-13T07:51:35: 2025-12-13 07:51:35,475 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:51:35: 2025-12-13 07:51:35,476 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:51:35: 2025-12-13 07:51:35,476 - INFO - System specs: 8 CPU cores, optimized for high performance
+2025-12-13T07:51:35: 2025-12-13 07:51:35,476 - INFO - System specs: 8 CPU cores, optimized for high performance
+2025-12-13T07:51:35: 2025-12-13 07:51:35,478 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2025-12-13T07:51:35: 2025-12-13 07:51:35,478 - INFO - System specs: 8 CPU cores, optimized for high performance
+2025-12-13T07:51:36: 2025-12-13 07:51:36,038 - INFO - Model loaded successfully with 8K context window
+2025-12-13T07:51:36: 2025-12-13 07:51:36,038 - INFO - Model loaded successfully with 8K context window
+2025-12-13T07:51:36: 2025-12-13 07:51:36,038 - INFO - Model loaded successfully with 8K context window
+2025-12-13T07:51:36: 2025-12-13 07:51:36,038 - INFO - Model loaded successfully with 8K context window
+2025-12-13T07:51:36: INFO:     Started server process [24599]
+2025-12-13T07:51:36: INFO:     Started server process [24597]
+2025-12-13T07:51:36: INFO:     Started server process [24600]
+2025-12-13T07:51:36: INFO:     Waiting for application startup.
+2025-12-13T07:51:36: INFO:     Waiting for application startup.
+2025-12-13T07:51:36: INFO:     Waiting for application startup.
+2025-12-13T07:51:36: INFO:     Application startup complete.
+2025-12-13T07:51:36: INFO:     Application startup complete.
+2025-12-13T07:51:36: INFO:     Application startup complete.
+2025-12-13T07:51:36: INFO:     Started server process [24598]
+2025-12-13T07:51:36: INFO:     Waiting for application startup.
+2025-12-13T07:51:36: INFO:     Application startup complete.
+2025-12-14T20:24:51: 2025-12-14 20:24:51,137 - INFO - Processing request for session: q85j8sfjb
+2025-12-14T20:24:51: 2025-12-14 20:24:51,137 - INFO - Creating new chat history for session: q85j8sfjb
+2025-12-14T20:24:51: 2025-12-14 20:24:51,137 - INFO - Current history length: 1
+2026-02-10T12:34:28: INFO:     Shutting down
+2026-02-10T12:34:28: INFO:     Shutting down
+2026-02-10T12:34:28: INFO:     Shutting down
+2026-02-10T12:34:28: INFO:     Shutting down
+2026-02-10T12:34:28: INFO:     Waiting for application shutdown.
+2026-02-10T12:34:28: INFO:     Application shutdown complete.
+2026-02-10T12:34:28: INFO:     Finished server process [24599]
+2026-02-10T12:34:28: INFO:     Waiting for application shutdown.
+2026-02-10T12:34:28: INFO:     Application shutdown complete.
+2026-02-10T12:34:28: INFO:     Finished server process [24597]
+2026-02-10T12:34:28: INFO:     Waiting for application shutdown.
+2026-02-10T12:34:28: INFO:     Application shutdown complete.
+2026-02-10T12:34:28: INFO:     Finished server process [24598]
+2026-02-10T12:34:28: INFO:     Waiting for application shutdown.
+2026-02-10T12:34:28: INFO:     Application shutdown complete.
+2026-02-10T12:34:28: INFO:     Finished server process [24600]
+2026-02-10T12:34:28: INFO:     Stopping parent process [24595]
+2026-02-10T12:34:28: INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-02-10T12:34:28: INFO:     Started parent process [1486427]
+2026-02-10T12:34:29: 2026-02-10 12:34:29,278 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2026-02-10T12:34:29: 2026-02-10 12:34:29,278 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2026-02-10T12:34:29: 2026-02-10 12:34:29,278 - INFO - System specs: 8 CPU cores, optimized for high performance
+2026-02-10T12:34:29: 2026-02-10 12:34:29,278 - INFO - System specs: 8 CPU cores, optimized for high performance
+2026-02-10T12:34:29: 2026-02-10 12:34:29,280 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2026-02-10T12:34:29: 2026-02-10 12:34:29,280 - INFO - System specs: 8 CPU cores, optimized for high performance
+2026-02-10T12:34:29: 2026-02-10 12:34:29,288 - INFO - Attempting to load model from: /opt/drinfinityai/backend/llama.cpp/models/BioMistral-7B.Q4_K_M.gguf
+2026-02-10T12:34:29: 2026-02-10 12:34:29,288 - INFO - System specs: 8 CPU cores, optimized for high performance
+2026-02-10T12:34:29: 2026-02-10 12:34:29,837 - INFO - Model loaded successfully with 8K context window
+2026-02-10T12:34:29: 2026-02-10 12:34:29,837 - INFO - Model loaded successfully with 8K context window
+2026-02-10T12:34:29: 2026-02-10 12:34:29,837 - INFO - Model loaded successfully with 8K context window
+2026-02-10T12:34:29: 2026-02-10 12:34:29,837 - INFO - Model loaded successfully with 8K context window
+2026-02-10T12:34:29: INFO:     Started server process [1486435]
+2026-02-10T12:34:29: INFO:     Started server process [1486432]
+2026-02-10T12:34:29: INFO:     Started server process [1486434]
+2026-02-10T12:34:29: INFO:     Started server process [1486433]
+2026-02-10T12:34:29: INFO:     Waiting for application startup.
+2026-02-10T12:34:29: INFO:     Waiting for application startup.
+2026-02-10T12:34:29: INFO:     Waiting for application startup.
+2026-02-10T12:34:29: INFO:     Waiting for application startup.
+2026-02-10T12:34:29: INFO:     Application startup complete.
+2026-02-10T12:34:29: INFO:     Application startup complete.
+2026-02-10T12:34:29: INFO:     Application startup complete.
+2026-02-10T12:34:29: INFO:     Application startup complete.
+2026-02-10T12:35:30: 2026-02-10 12:35:30,119 - INFO - Processing request for session: lb7ly0ghs
+2026-02-10T12:35:30: 2026-02-10 12:35:30,119 - INFO - Creating new chat history for session: lb7ly0ghs
+2026-02-10T12:35:30: 2026-02-10 12:35:30,119 - INFO - Current history length: 1
+2026-02-10T12:36:16: 2026-02-10 12:36:16,808 - INFO - Processing request for session: lb7ly0ghs
+2026-02-10T12:36:16: 2026-02-10 12:36:16,808 - INFO - Creating new chat history for session: lb7ly0ghs
+2026-02-10T12:36:16: 2026-02-10 12:36:16,808 - INFO - Current history length: 1
+2026-02-12T21:20:02: 2026-02-12 21:20:02,756 - INFO - Processing request for session: i8j8z41if
+2026-02-12T21:20:02: 2026-02-12 21:20:02,756 - INFO - Creating new chat history for session: i8j8z41if
+2026-02-12T21:20:02: 2026-02-12 21:20:02,756 - INFO - Current history length: 1
+2026-02-12T21:20:04: 2026-02-12 21:20:04,374 - INFO - Cleaned up session: lb7ly0ghs

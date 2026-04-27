@@ -36,7 +36,7 @@ module.exports = {
       script: 'npm',
       args: 'start',
       cwd: '/opt/drinfinityai/frontend',
-      instances: 2,  // 2 instances for better load handling
+      instances: 1,  // 2 instances for better load handling
       exec_mode: 'cluster',  // Cluster mode for load balancing
       autorestart: true,
       watch: false,
