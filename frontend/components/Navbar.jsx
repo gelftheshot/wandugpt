@@ -15,10 +15,9 @@ const Header = () => {
                         <Image
                             src="/logo.jpeg"
                             alt="Dr. Infinity AI"
-                            width={150}
-                            height={85}
+                            width={100}
+                            height={57}
                             className="object-contain"
-                            style={{ width: '200px', height: 'auto' }}
                         />
                     </Link>
                 </div>
