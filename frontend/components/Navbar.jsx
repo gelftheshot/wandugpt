@@ -15,8 +15,8 @@ const Header = () => {
                         <Image
                             src="/logo.jpeg"
                             alt="Dr. Infinity AI"
-                            width={69.97}
-                            height={40}
+                            width={150}
+                            height={85}
                             className="object-contain"
                         />
                     </Link>
